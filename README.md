@@ -8,7 +8,7 @@ This repository contains a collection of generic launch scripts designed to simp
     * Applies the Proton-Sarek agg profile settings to the specified program. This allows you to use this settings outside of the Proton-Sarek, without manual environment variable configuration.
 * **`softwarerun`**:
     * Forces the specified program to run in software rendering mode.
-    * **Note:** You may need to modify the `softwarerun` file in case the default target for VK_ICD_FILENAMES is not the desired one, or it uses an incorrect path. The default path should work for most installations.
+    * **Note:** You may need to modify the `softwarerun` file in case the default target for VK_ICD_FILENAMES is not the desired one, or it uses an incorrect path. The default path and target should work for most installations.
       
 ## Installation
 
