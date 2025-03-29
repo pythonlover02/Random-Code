@@ -9,6 +9,8 @@ This repository contains a collection of generic launch scripts designed to simp
 * **`softwarerun`**:
     * Forces the specified program to run in software rendering mode.
     * **Note:** You may need to modify the `softwarerun` file in case the default target for VK_ICD_FILENAMES is not the desired one, or it uses an incorrect path. The default path and target should work for most installations.
+* **`glthread`**:
+    * Enables OpenGL thread optimizations for the selected program, might increase or decrease the fps.
       
 ## Installation
 
@@ -17,7 +19,7 @@ This repository contains a collection of generic launch scripts designed to simp
 3.  Copy the scripts to `/usr/local/bin` using the following command:
 
     ```bash
-    sudo cp sarekrun softwarerun /usr/local/bin/
+    sudo cp sarekrun softwarerun glthread /usr/local/bin/
     ```
 
     * Using `/usr/local/bin` instead of `/usr/bin` is recommended for locally installed executables to prevent potential conflicts with system-managed files.
@@ -28,8 +30,9 @@ This repository contains a collection of generic launch scripts designed to simp
 
     ```bash
     sarekrun program_name
+    glthread program_name
     softwarerun program_name
-    sarekrun softwarerun program_name
+    sarekrun glthread softwarerun program_name
     ```
 
     Replace `program_name` with the actual name or path of the program you want to run.
@@ -40,8 +43,9 @@ This repository contains a collection of generic launch scripts designed to simp
 
     ```
     sarekrun
+    glthread
     softwarerun
-    sarekrun softwarerun
+    sarekrun glthread softwarerun
     ```
 
     * On Steam remember to add at the end `%command%`.
