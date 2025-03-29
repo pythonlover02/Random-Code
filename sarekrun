@@ -1,5 +1,5 @@
 #!/bin/bash
-# Helper script to launch games with Sarek agg Profile Outside of Proton
+# Helper script to launch games with Sarek agg Profile Outside of Proton-Sarek
 
 # Set Proton tweaks
 export WINEDEBUG="-all"
