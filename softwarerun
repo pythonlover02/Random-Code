@@ -4,7 +4,7 @@
 # Set The Env Variables to Run the Program under Software Rendering Mode
 export LIBGL_ALWAYS_SOFTWARE="1"
 export __GLX_VENDOR_LIBRARY_NAME="mesa"
-export MESA_VK_DEVICE_SELECT="10005:0!"
+export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/lvp_icd.x86_64.json"
 
 # Launch the specified program with the environment variables
 "$@"
