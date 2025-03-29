@@ -1,0 +1,10 @@
+#!/bin/bash
+# Helper script to launch games/programs with Software Rendering.
+
+# Set The Env Variables to run the Program under OpenGL Thread Optimizations on Mesa and NVIDIA drivers
+export __GL_THREADED_OPTIMIZATIONS="1"
+export mesa_glthread="true"
+
+# Launch the specified program with the environment variables
+"$@"
+
