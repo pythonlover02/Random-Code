@@ -1,5 +1,5 @@
 #!/bin/bash
-# Helper script to launch games with Sarek agg Profile Outside of Proton
+# Helper script to launch games/programs with Software Rendering.
 
 # Set The Env Variables to Run the Program under Software Rendering Mode
 export LIBGL_ALWAYS_SOFTWARE="1"
