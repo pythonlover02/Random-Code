@@ -32,6 +32,9 @@ export MESA_EXTENSION_OVERRIDE="-GL_EXT_framebuffer_multisample -GL_EXT_framebuf
 # Set DXVK tweaks
 export DXVK_CONFIG="dxgi.syncInterval = 0;d3d9.presentInterval = 0;d3d11.maxTessFactor = 8;d3d11.relaxedBarriers = True;d3d11.ignoreGraphicsBarriers = True;d3d11.samplerAnisotropy = 0;d3d9.samplerAnisotropy = 0;d3d11.invariantPosition = False;d3d9.invariantPosition = False;d3d9.floatEmulation = True"
 
+# Disable Vsync on Vulkan programs that are run under a Mesa Driver
+export MESA_VK_WSI_PRESENT_MODE="immediate"
+
 # Launch the specified program with the environment variables
 "$@"
 
