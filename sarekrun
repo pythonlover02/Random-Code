@@ -35,6 +35,12 @@ export DXVK_CONFIG="dxgi.syncInterval = 0;d3d9.presentInterval = 0;d3d11.maxTess
 # Disable Vsync on Vulkan programs that are run under a Mesa Driver
 export MESA_VK_WSI_PRESENT_MODE="immediate"
 
+# Process potential environment variable assignments
+while [[ "$1" =~ "=" ]]; do
+  export "$1"
+  shift
+done
+
 # Launch the specified program with the environment variables
 "$@"
 
