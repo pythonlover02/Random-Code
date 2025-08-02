@@ -1,0 +1,50 @@
+#!/bin/bash
+# Helper script to launch games with Sarek agg Profile Outside of Proton-Sarek
+
+# Set Proton tweaks
+export WINEDEBUG="-all"
+export DXVK_LOG_LEVEL="none"
+export VKD3D_DEBUG="none"
+export VKD3D_SHADER_DEBUG="none"
+
+# Set old GPU fixes
+export __GL_SHADER_DISK_CACHE="1"
+export __GL_SHADER_DISK_CACHE_SIZE="2147483648"
+export MESA_SHADER_CACHE_DISABLE="false"
+export MESA_SHADER_CACHE_MAX_SIZE="2097152K"
+export __GL_IGNORE_GLSL_EXT_REQS="1"
+export MESA_GL_VERSION_OVERRIDE="4.6"
+export MESA_GLSL_VERSION_OVERRIDE="460"
+export MESA_VK_VERSION_OVERRIDE="1.4"
+
+# Set OpenGL/WineD3D tweaks
+export __GL_SYNC_TO_VBLANK="0"
+export __GL_OpenGLImageSettings="3"
+export __GL_FSAA_MODE="0"
+export __GL_ALLOW_FXAA_USAGE="0"
+export __GL_LOG_MAX_ANISO="0"
+export __GL_VRR_ALLOWED="0"
+export MESA_NO_ERROR="true"
+export MESA_NO_DITHER="1"
+export vblank_mode="0"
+export MESA_EXTENSION_OVERRIDE="-GL_EXT_framebuffer_multisample -GL_EXT_framebuffer_multisample_blit_scaled -GL_EXT_texture_filter_anisotropic"
+
+# Set The Env Variables to run the Game under OpenGL Thread Optimizations on Mesa and NVIDIA drivers
+export __GL_THREADED_OPTIMIZATIONS="1"
+export mesa_glthread="true"
+
+# Set DXVK tweaks
+export DXVK_CONFIG="dxgi.syncInterval = 0;d3d9.presentInterval = 0;d3d11.maxTessFactor = 8;d3d11.relaxedBarriers = True;d3d11.ignoreGraphicsBarriers = True;d3d11.samplerAnisotropy = 0;d3d9.samplerAnisotropy = 0;d3d11.invariantPosition = False;d3d9.invariantPosition = False;d3d9.floatEmulation = True"
+
+# Disable Vsync on Vulkan programs that are run under a Mesa Driver
+export MESA_VK_WSI_PRESENT_MODE="immediate"
+
+# Process potential environment variable assignments
+while [[ "$1" =~ "=" ]]; do
+  export "$1"
+  shift
+done
+
+# Launch the specified program with the environment variables
+"$@"
+

@@ -1,0 +1,17 @@
+#!/bin/bash
+# Helper script to launch games/programs with Software Rendering.
+
+# Set The Env Variables to Run the Program under Software Rendering Mode
+export LIBGL_ALWAYS_SOFTWARE="1"
+export __GLX_VENDOR_LIBRARY_NAME="mesa"
+export VK_ICD_FILENAMES="/usr/share/vulkan/icd.d/lvp_icd.x86_64.json"
+
+# Process potential environment variable assignments
+while [[ "$1" =~ "=" ]]; do
+  export "$1"
+  shift
+done
+
+# Launch the specified program with the environment variables
+"$@"
+
