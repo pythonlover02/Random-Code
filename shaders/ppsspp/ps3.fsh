@@ -85,7 +85,7 @@ void main() {
     // Color Correction
     // Constants
     const float brightnes  = 1.00;
-    const float saturation = 2.00;
+    const float saturation = 1.00;
     const float contrast    = 1.00;
     const float gamma     = 1.50;
 
