@@ -23,5 +23,8 @@
     "editor.autoIndentOnPaste": true,
     "editor.bracketPairColorization.enabled": false,
     "editor.fontFamily": "JetBrains Mono",
-    "editor.fontSize": 16
+    "editor.fontSize": 16,
+    "files.trimTrailingWhitespace": true,
+    "files.trimFinalNewlines": true,
+    "files.insertFinalNewline": true
 }
